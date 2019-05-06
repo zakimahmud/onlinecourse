@@ -1,0 +1,25 @@
+<div class="form-group">
+    <label for="Level">Level  </label>
+    <select class="form-control" name="level" required="required">
+   <option value="">Select Level</option>
+   <?php
+$sql=mysqli_query($con,"select * from level");
+while($row=mysqli_fetch_array($sql))
+{
+?>
+<option value="<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($row['level']);?></option>
+<?php } ?>
+
+    </select>
+  </div>
+
+
+SELECT * from course where EXISTS(SELECT * from courseofferlist where   courseofferlist.intake=28 and ( course1=course.id OR course2=course.id OR course3=course.id OR course4=course.id OR course5=course.id ))
+
+
+
+Final Query :
+
+
+
+SELECT * from course where EXISTS(SELECT * from courseofferlist where courseofferlist.session=2014 and courseofferlist.semester=1 and courseofferlist.intake=28 and ( course1=course.id OR course2=course.id OR course3=course.id OR course4=course.id OR course5=course.id ))
